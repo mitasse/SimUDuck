@@ -8,23 +8,32 @@ from quack_behavior.quack_behavior import QuackBehavior
 class Duck(ABC):
     """Duck abstract base class"""
 
-    fly_behavior: FlyBehavior
-    quack_behavior: QuackBehavior
+    def __init__(self) -> None:
+        self.fly_behavior: FlyBehavior
+        self.quack_behavior: QuackBehavior
 
     @abstractmethod
-    def display(self):
+    def display(self) -> None:
         """Display"""
         ...
 
-    def perform_fly(self):
+    def set_fly_behavior(self, fly_behavior: FlyBehavior) -> None:
+        """Set fly behavior"""
+        self.fly_behavior = fly_behavior
+
+    def set_quack_behavior(self, quack_behavior: QuackBehavior) -> None:
+        """Set quack behavior"""
+        self.quack_behavior = quack_behavior
+
+    def perform_fly(self) -> None:
         """Perform fly"""
         self.fly_behavior.fly()
 
-    def perform_quack(self):
+    def perform_quack(self) -> None:
         """Perform quack"""
         self.quack_behavior.quack()
 
     @staticmethod
-    def swim():
+    def swim() -> None:
         """Swim"""
         print("All ducks float, even decoys!")
