@@ -6,4 +6,4 @@ class FlyRocketPowered:
 
     def fly(self) -> None:
         """Fly"""
-        print("I 'm flying with a rocket!'")
+        print("I 'm flying with a rocket!")
